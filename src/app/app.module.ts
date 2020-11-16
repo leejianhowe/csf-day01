@@ -2,15 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { TextComponent } from './text/text.component';
+import { ImagesComponent } from './images/images.component';
+
+import { FruitsService } from './fruits.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
+import { ParaComponent } from './para/para.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, HeaderComponent, TextComponent, ImagesComponent, ParaComponent],
+  imports: [BrowserModule, NoopAnimationsModule, MatGridListModule, MatListModule],
+  providers: [FruitsService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
