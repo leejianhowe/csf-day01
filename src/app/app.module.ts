@@ -10,13 +10,25 @@ import { FruitsService } from './fruits.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { ParaComponent } from './para/para.component';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, TextComponent, ImagesComponent, ParaComponent],
-  imports: [BrowserModule, NoopAnimationsModule, MatGridListModule, MatListModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    TextComponent,
+    ImagesComponent,
+    ParaComponent,
+  ],
+  imports: [
+    BrowserModule,
+    NoopAnimationsModule,
+    MatGridListModule,
+    MatListModule,
+    MatCardModule
+  ],
   providers: [FruitsService],
   bootstrap: [AppComponent],
 })

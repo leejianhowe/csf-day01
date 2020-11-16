@@ -1,19 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {FruitsService} from '../fruits.service'
+import { FruitsService } from '../fruits.service'
+import { Fruit } from '../fruits.model'
+
 @Component({
   selector: 'app-images',
   templateUrl: './images.component.html',
   styleUrls: ['./images.component.css']
 })
 export class ImagesComponent implements OnInit {
-  images: string[]
 
   constructor(private fruitsService:FruitsService) { }
-  displayFruit: string = this.fruitsService.randomFruit()
+  displayFruit: Fruit
   
   ngOnInit(): void {
-    this.images = this.fruitsService.getFruits()
-    this.fruitsService.selectFruit.subscribe(( fruit: string)=>this.displayFruit=fruit)
+    this.fruitsService.selectFruit.subscribe(( ele:Fruit)=>this.displayFruit=ele)
   }
 
 

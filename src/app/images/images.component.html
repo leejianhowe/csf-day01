@@ -1,5 +1,10 @@
-<div>
-    <h3>Images of the {{displayFruit}}</h3>
-    <!-- <img *ngFor="let i of images" src="../../assets/images/{{i}}.jpg" alt=""> -->
-    <img src="assets/images/{{displayFruit}}.jpg" alt="">
+<div *ngIf="displayFruit; else text">
+  <mat-card>
+    <mat-card-title>{{displayFruit.name}}</mat-card-title>
+    <img mat-card-image src="assets/images/{{ displayFruit.name }}.jpg"/>
+    <mat-card-content>{{display.desc}}</mat-card-content>
+  </mat-card>
+  <h3>Images of the {{ displayFruit.name }}</h3>
+  <!-- <img *ngFor="let i of images" src="../../assets/images/{{i}}.jpg" alt=""> -->
 </div>
+<ng-template #text>Click to display</ng-template>
